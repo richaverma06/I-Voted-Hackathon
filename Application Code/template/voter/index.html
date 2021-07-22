@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "en">
+    <head>
+        <meta charset  = "UTF-8">
+     <title>Voting Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'voter/homepage.css' %}"> 
+    </head>
+<body>
+{% block message %}
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+{% endblock message %}
+<div id="backgroundimg">
+    <header id="logo">
+    <img src="{% static 'voter/smitlogo.png' %}" alt="Smit logo" class ="img-responsive img-circle"/>
+    </header>
+<h1>SMIT VOTING PORTAL</h1>
+<div id="btnscont">
+<a href="{% url 'show_admin:admin' %}">
+	<button id="admin" class ="btns" >Admin</button></a>
+
+
+<a href="{% url 'voter:vote' %}">
+<button id="vote" class = "btns">Vote/Register</button></a>
+
+<a href="{% url 'show_admin:result' %}">
+<button id="result" class="btns">Result </button></a>
+</div> 
+</div>
+
+</div>    
+
+</body>
+
+<style>
+    #backgroundimg{
+        background-image:url("{% static 'voter/smitimg2.jpg' %}");
+        height:100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+</style>
+
+</html>

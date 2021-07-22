@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%block style%}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% comment %} <h1>This is base template</h1> {% endcomment %}
+    <div class='container'>
+        <nav class="navbar navbar-default">
+            {% block nav %}{% endblock nav %}
+        </nav>
+        {% if messages %}
+        <div class="alert alert-info" role="alert">
+            {% block message %}
+            {% endblock message %}
+        </div>
+        {% endif %}
+        <div>
+            {% block content %}
+            {% endblock content %}       
+        </div>
+        <br>
+        {% block result %}
+        {% endblock result %}
+    </div>
+</body>
+</html>
+
+{% comment %} Blocks {% endcomment %}
+{% comment %} 
+Style
+Title
+nav
+message
+content 
+{% endcomment %}

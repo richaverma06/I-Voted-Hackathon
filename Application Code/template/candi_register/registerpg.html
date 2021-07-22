@@ -1,0 +1,193 @@
+<!DOCTYPE html>    
+<html>
+
+  <head>
+  
+	<title>Register Page</title>
+  
+
+  </head>
+
+  <body>
+
+  <form action="{% url 'candi_register:register' %}" name="StudentRegistration" onSubmit="return(validate());" method='POST'>
+  {% csrf_token %}
+<table cellpadding="12" width="50%" bgcolor="FFE4B5" align="center" cellspacing="2">
+
+
+  <tr>
+
+    <td colspan=2>
+  
+    <center><font size=4><b>Candidate Registration Form</b></font></center>
+  
+    </td>
+  
+    </tr>
+  
+  
+  <tr>
+  
+    <td>Name</td>
+  
+    <td><input type=text name=textnames id="textname" size="30" required></td>
+  
+    </tr>
+  
+  
+  <tr>
+  
+    <td>Registration No.</td>
+  
+    <td><input type="text" name="regno" id="regno" size="30" required></td>
+  
+    </tr>
+  
+    <tr>
+  
+      <td>EmailId</td>
+    
+      <td><input type="text" name="emailid" id="emailid" size="30" required></td>
+    
+      </tr>
+  
+    <tr>
+  
+      <td>Department</td>
+    
+      <td><select name="dept">
+    
+      <option value="-1" selected>select</option>
+    
+      <option value="cse">CS</option>
+    
+      <option value="it">IT</option>
+    
+      <option value="ec">EC</option>
+    
+      <option value="ee">EE</option>
+      <option value="me">ME</option>
+  
+      <option value="ce">CE</option>
+    
+      </select></td>
+    
+      </tr>
+  
+      <tr>
+  
+        <td>Semester</td>
+  
+        <td><select name="sem">
+        
+          <option value="-1" selected>select</option>
+    
+          <option value="5th">5th</option>
+  
+    
+  
+  
+  <tr>
+  
+    <td>Date of Birth</td>
+  
+    <td><label for="start-date"></label>
+      <input type="date" id="start-date" name="start_date"id="dob" size="30" required></td>
+      
+  
+    
+    
+  
+    </tr>
+  
+    <tr>
+  
+      <td>CGPA</td>
+    
+      <td><input type="text" name="cgpa"
+    
+      id="cgpa" size="30" required  ></td>
+    
+      </tr>
+  
+      <tr>
+  
+        <td>Current Position(If any)</td>
+      
+        <td><input type="text" name="currentpos"
+      
+          id="currentpos" size="30"></td>
+        
+        </tr>
+        
+  
+  
+  
+  <tr>
+  
+    <td>Position</td>
+  
+    <td><select name="position">
+  
+    <option value="-1" selected>select</option>
+  
+    <option value="Vice President">Vice President</option>
+  
+    <option value="General Secretary">General Secretary</option>
+  
+    <option value="Literary Secretary">Literary Secretary</option>
+  
+   <option value="Cultural Secretary">Cultural Secretary</option>
+  
+    <option value="Sports Secretary">Sports Secretary</option>
+  
+    <option value="Girls Mess Secretary">Girls Mess Secretary</option>
+  
+    <option value="Boys Mess Secretary">Boys Mess Secretary</option>
+  
+  
+    </select></td>
+  
+    </tr>
+  
+    <tr>
+      <td>Write in less than 300 words, why one should vote you? </td>
+      <td><textarea rows="8" cols="55" name="feedback" required></textarea></label></br></td>
+       
+    </tr>
+    
+  
+  
+  
+  
+  
+    <tr>
+  
+    <td ><input type="reset" class="btn" ></td>
+  
+    <td colspan="2"><input type="submit" value="Submit Form" class="btn" /></td>
+  <style>
+    .btn{
+      background-color:#7FFF00;
+      padding:2%;
+      width:40%;
+      border-radius: 10px;
+      font-size: medium;
+    }
+  </style>
+  <script>
+    var cgpa = document.getElementById("cgpa");
+    if(cgpa<7.5)
+    alert("CGPA must be greater or equal to 7.5");
+    else if(cgpa>10)
+    alert("Please enter a valid CGPA");
+    </script>
+    </tr>
+  
+    </table>
+  
+    </form>
+  
+    </body>
+  
+    </html>

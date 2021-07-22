@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Result{% endblock %}
+
+{% block result %}
+
+<div id="bkg">
+<div id="resultpg" >
+    <h1 id="winners">Winners</h1>
+    
+    {% for position, candidate in result.items %}
+        <h3 id="winpos">{{position}} - {{candidate}} (username - {{candidate.user_profile}})</h3>
+    {% endfor %}
+</div>
+</div>
+<style>
+#resultpg{
+        background-color :#FFE4B5;
+        width :80%;
+        margin:1%;
+        height:70vh;
+        position: relative; left:120px; top:80px;
+        
+    }
+    #winners{
+        
+        background-color:yellow;
+        text-align:center;
+    
+        
+}
+#winpos{
+    font-size :large ;
+    margin:3%;
+     
+}
+#bkg{
+   
+    
+    background-image : url("{% static 'show_admin/smitimg.jpg' %}");
+    height:91vh ;
+    
+        background-size: cover;
+        
+}
+</style>
+
+{% endblock %}
